@@ -97,21 +97,21 @@ data_platform_project/
        │  Airflow DAG │ ← 定时监听数据/调度ETL任务
        └────┬─────────┘
             ↓ Trigger scripts
- ┌───────────────────────┐
- │  ETL 脚本 / Notebooks │ ← PySpark/SQL 清洗处理
- └────┬────────────┬─────┘
-      ↓            ↓
- ┌─────────┐   ┌─────────────┐
- │ Raw/    │   │ Processed   │ ← Parquet/Delta/SQLite 表
- │ Staging │   └─────────────┘
- └─────────┘
-      ↓
-┌────────────────────┐
-│  Power BI / Superset│ ← 可视化报表连接数据仓库
-└────────────────────┘
+        ┌───────────────────────┐
+        │  ETL 脚本 / Notebooks │ ← PySpark/SQL 清洗处理
+        └────┬────────────┬─────┘
+            ↓            ↓
+        ┌─────────┐   ┌─────────────┐
+        │ Raw/    │   │ Processed   │ ← Parquet/Delta/SQLite 表
+        │ Staging │   └─────────────┘
+        └─────────┘
+            ↓
+        ┌────────────────────┐
+        │  Power BI / Superset│ ← 可视化报表连接数据仓库
+        └────────────────────┘
 
-（可选） ↓
-     Azure Function ← 处理某些触发型任务（如报警、通知）
+        （可选） ↓
+            Azure Function ← 处理某些触发型任务（如报警、通知）
 
 
 
